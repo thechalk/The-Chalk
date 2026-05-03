@@ -53,17 +53,6 @@ nav {
 
 .nav-right { display: flex; align-items: center; gap: 1.5rem; }
 
-.nav-link {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-link:hover { color: var(--chalk); }
-
 .btn {
   font-family: 'DM Mono', monospace;
   font-size: 0.72rem;
@@ -79,10 +68,7 @@ nav {
 }
 .btn-green { background: var(--green); color: var(--ink); font-weight: 500; }
 .btn-green:hover { background: var(--green-dark); }
-.btn-outline { background: transparent; color: var(--chalk); border: 1px solid var(--border-mid); }
-.btn-outline:hover { border-color: var(--chalk); background: rgba(242,237,228,0.04); }
 
-/* HERO */
 .hero {
   padding: 7rem 2.5rem 5rem;
   max-width: 700px;
@@ -128,45 +114,6 @@ h1 span { color: var(--green); display: block; }
 
 hr.divider { border: none; border-top: 1px solid var(--border); }
 
-/* HOW IT WORKS */
-.how {
-  padding: 5rem 2.5rem;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.63rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.section-label::after { content:'';flex:1;height:1px;background:var(--border); }
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-.step { background: var(--ink); padding: 2rem 1.75rem; }
-.step-n {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  color: var(--green);
-  margin-bottom: 1rem;
-}
-.step-title { font-size: 1rem; font-weight: 500; margin-bottom: 0.45rem; }
-.step-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
-
-/* PAY SECTION */
 .pay-section {
   padding: 5rem 2.5rem;
   max-width: 860px;
@@ -214,7 +161,6 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
 }
 .field input:focus { border-color: var(--green); }
 .field input::placeholder { color: rgba(242,237,228,0.2); }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
 
 .submit-btn {
   width: 100%;
@@ -244,7 +190,6 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
   line-height: 1.65;
 }
 
-/* Amount chips */
 .amount-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -307,8 +252,6 @@ hr.divider { border: none; border-top: 1px solid var(--border); }
 .custom-wrap input { flex:1;background:transparent;border:none;outline:none;color:var(--chalk);font-family:'Bebas Neue',sans-serif;font-size:1.25rem;padding:0 0.85rem;height:44px;letter-spacing:0.04em; }
 .custom-wrap input::placeholder { color: rgba(242,237,228,0.18); }
 
-/* Success */
-.success-msg { display:none;text-align:center;padding:2rem 0; }
 .success-icon { width:46px;height:46px;background:rgba(0,166,81,0.1);border:1px solid rgba(0,166,81,0.28);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.2rem; }
 .success-title { font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:0.05em;margin-bottom:0.4rem; }
 .success-sub { font-size:0.81rem;color:var(--muted);line-height:1.65; }
@@ -333,8 +276,7 @@ footer a:hover { color: var(--chalk); }
 @media (max-width: 660px) {
   nav { padding: 1.25rem 1.25rem; }
   .hero { padding: 5rem 1.25rem 3.5rem; }
-  .how, .pay-section { padding: 3.5rem 1.25rem; }
-  .steps { grid-template-columns: 1fr; }
+  .pay-section { padding: 3.5rem 1.25rem; }
   .two-col { grid-template-columns: 1fr; }
   footer { padding: 1.5rem 1.25rem; flex-direction: column; text-align: center; }
 }
@@ -345,33 +287,29 @@ footer a:hover { color: var(--chalk); }
 <nav>
   <a href="#" class="logo">The <em>Chalk</em></a>
   <div class="nav-right">
-    
     <a href="#pay" class="btn btn-green">Buy Picks</a>
   </div>
 </nav>
 
 <section class="hero">
   <div class="tag"><span class="tag-dot"></span>Premium Sports Picks</div>
-  <h1>Win<span>With Us.</span></h1>
-  <p class="hero-sub">Create your account and get access to premium picks. Pay only for what you want.</p>
+  <h1>Built To<span>Win.</span></h1>
+  <p class="hero-sub">Premium picks. Real results.</p>
   <div class="hero-actions">
     <a href="#pay" class="btn btn-green">Buy Picks</a>
-    <a href="#how" class="btn btn-outline">How It Works</a>
   </div>
 </section>
 
 <hr class="divider">
 
 <div class="pay-section" id="pay">
-  
   <div class="two-col">
 
-    <!-- ACCOUNT PANEL -->
     <div class="panel" id="signup-panel">
       <div class="panel-title">Your Info</div>
       <div class="panel-sub">Quick one-time setup to get you started.</div>
 
-      <div data-fs-success style="display:none;">
+      <div id="fs-success" style="display:none;text-align:center;padding:2rem 0;">
         <div class="success-icon">✓</div>
         <div class="success-title">You're In</div>
         <div class="success-sub" id="success-msg-text">Welcome. Now go ahead and buy your picks.</div>
@@ -400,7 +338,6 @@ footer a:hover { color: var(--chalk); }
       </form>
     </div>
 
-    <!-- PAY PANEL -->
     <div class="panel">
       <div class="panel-title">Buy Picks</div>
       <div class="panel-sub">Select a package or enter a custom amount.</div>
@@ -446,27 +383,28 @@ footer a:hover { color: var(--chalk); }
 </footer>
 
 <script>
-  // ── Formspree Ajax init ──
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
   formspree('initForm', {
     formElement: '#chalk-signup',
     formId: 'mkoyoalj',
     onSuccess: function() {
-      // Save to localStorage for Stripe pre-fill
       const name  = document.getElementById('inp-name').value.trim();
       const email = document.getElementById('inp-email').value.trim();
       localStorage.setItem('tc_name', name);
       localStorage.setItem('tc_email', email);
       const first = name.split(' ')[0];
-      const msg = document.getElementById('success-msg-text');
-      if (msg && first) msg.textContent = 'Welcome, ' + first + '. Now go ahead and buy your picks.';
+      document.getElementById('chalk-signup').style.display = 'none';
+      document.querySelector('[data-fs-error]').style.display = 'none';
+      const successEl = document.getElementById('fs-success');
+      const msgEl = document.getElementById('success-msg-text');
+      if (first && msgEl) msgEl.textContent = 'Welcome, ' + first + '. Now go ahead and buy your picks.';
+      if (successEl) successEl.style.display = 'block';
     }
   });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 <script>
-// ── Amount selection ──
 let chosenAmt = null;
 
 function selectAmt(el, val) {
@@ -481,10 +419,6 @@ function clearChips() {
   chosenAmt = null;
 }
 
-// ── Stripe Payment Links ──
-// Replace each value with your actual Stripe Payment Link URL
-// Fixed amounts: Stripe Dashboard → Payment Links → New (set price)
-// Custom: create a product with "Customer chooses price", set minimum $1
 const LINKS = {
   1000:   'YOUR_STRIPE_LINK_1000',
   1500:   'YOUR_STRIPE_LINK_1500',
@@ -506,7 +440,6 @@ function goCheckout() {
   window.open(url, '_blank');
 }
 
-// Restore saved name/email on reload
 window.addEventListener('DOMContentLoaded', () => {
   const name  = localStorage.getItem('tc_name');
   const email = localStorage.getItem('tc_email');
